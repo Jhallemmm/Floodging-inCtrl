@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--font-inter);
+  overflow: hidden;
+}
+
+#splash {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, var(--login-gradient-start), var(--login-gradient-end));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 9999;
+}
+
+#splash img {
+  width: 120px;
+  margin-bottom: 15px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+#app { display: none; }
+
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  background-color: var(--light-bg);
+}
+
+/*l*/
+.left-panel {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: fill;
+  z-index: 1; 
+}
+
+.wave img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: drop-shadow(2.5px 0 3px rgba(0.5, 0.5, 0.5, 0.5))
+}
+
+.branding {
+  position: relative; 
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding-right: 25%; 
+  padding-bottom: 10%;
+}
+
+.branding img {
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.branding h2 {
+  font-family: var(--font-sansita);
+  font-size: 3rem;
+  margin-bottom: 5px;
+  line-height: 1.1;
+}
+
+.branding p {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* r*/
+.right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.login-form input {
+  width: 100%;
+  border: none;
+  border-bottom: 2.5px solid #333;
+  background: transparent;
+  padding: 15px 5px;
+  margin-bottom: 35px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: #888;
+}
+
+
+.login-form button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--button-gradient-start), var(--button-gradient-end));
+  color: white;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
